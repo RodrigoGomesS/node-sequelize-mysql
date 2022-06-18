@@ -1,0 +1,33 @@
+{
+  "name": "sequelize-mysql",
+  "version": "1.0.0",
+  "description": "Aprendendo a usar ORM com sequelize e node.",
+  "main": "./api/index.js",
+  "scripts": {
+    "start": "nodemon ./api/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RodrigoGomesS/node-sequelize-mysql.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RodrigoGomesS/node-sequelize-mysql/issues"
+  },
+  "homepage": "https://github.com/RodrigoGomesS/node-sequelize-mysql#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3",
+    "path": "^0.12.7",
+    "sequelize": "^6.20.1",
+    "sequelize-cli": "^6.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+
+  
+}
