@@ -8,4 +8,4 @@ Aprendendo a usar ORM com sequelize e node.
 
 ## link do curso: https://cursos.alura.com.br/course/orm-nodejs-api-sequelize-mysql
 
-## Status: Em andamento.
+## Status: Concluído.
