@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Pessoas.hasMany(models.Turmas,{
+      Pessoas.hasMany(models.Turmas, {
         foreignKey: 'docente_id'
       });
       Pessoas.hasMany(models.Matriculas, {
@@ -20,14 +20,40 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Pessoas.init({
-    nome: DataTypes.STRING,
+    nome: {
+      type: DataTypes.STRING,
+      validate: {
+        funcaovalidadora: function (dado) {
+          if (dado.length < 3) throw new Error('o campo nome deve ter mais de 3 caracteres')
+        }
+      }
+    },
+
     ativo: DataTypes.BOOLEAN,
-    email: DataTypes.STRING,
+
+    email: {
+      type: DataTypes.STRING,
+      validate: {
+        isEmail: {
+          args: true,
+          msg: 'Email invalido'
+        }
+      }
+    },
+
     role: DataTypes.STRING
   }, {
     sequelize,
     paranoid: true,
     modelName: 'Pessoas',
+    defaultScope: {
+      where: { ativo: true }
+    },
+    scopes: {
+      todos: {
+        where: {}
+      }
+    }
   });
   return Pessoas;
 };
